@@ -1,0 +1,30 @@
+<heroes>
+	<hero>
+		<title>Batman</title>
+		<fname>Bruce</fname>
+		<lname>Wayne</lname>
+		<power>8</power>
+		<photo>images/batman.jpg</photo>
+	</hero>
+	<hero>
+		<title>Superman</title>
+		<fname>Clark</fname>
+		<lname>Kent</lname>
+		<power>9</power>
+		<photo>images/superman.jpg</photo>
+	</hero>
+	<hero>
+		<title>Ironman</title>
+		<fname>Tony</fname>
+		<lname>Stark</lname>
+		<power>7</power>
+		<photo>images/ironman.jpg</photo>
+	</hero>
+	<hero>
+		<title>Spiderman</title>
+		<fname>Peter</fname>
+		<lname>Parker</lname>
+		<power>8</power>
+		<photo>images/spiderman.jpg</photo>
+	</hero>
+</heroes>

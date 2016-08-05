@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Events in jQuery</title>
+	<style>
+		.box{
+			width: 500px;
+			height: 200px;
+			background-color: gray;
+			color: white;
+			font-family: Arial;
+			text-align: justify;
+			padding: 10px;
+			margin: 10px auto;
+			overflow: auto;
+		}
+		button{
+			display: block;
+			width: 500px;
+			margin: 40px auto 0px ;
+		}
+	</style>
+	<script src="lib/jquery-3.1.0.js"></script>
+	<script>
+		$(function(){
+			$("button").on("click", function(){
+				// $(".box").load("data/data.txt")
+				// $(".box").load("data/data.xml")
+				// $(".box").load("data/data.json")
+				// $(".box").load("data/data.html h2:first");
+				//  $(".box").load("data/data.html", function(r,s,x){
+				 $(".box").load("data/data.xml", function(r,s,x){
+				 	//console.log(r,s,x)
+				 	if(s == "error"){
+				 		alert(x.statusText)
+				 	}else{
+				 		var data = $(r).find("title:first").text();
+				 		$(".box").text(data);
+				 	}
+				 })
+			})
+		})
+	</script>
+</head>
+<body>
+	<button>Get Data</button>
+	<div class="box"></div>
+</body>
+</html>

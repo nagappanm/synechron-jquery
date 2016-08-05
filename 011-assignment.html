@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+        li{
+            list-style: none;
+            width: 200px;
+            height: 50px;
+            padding: 5px;
+            margin: 5px;
+            border: 1px solid gray;
+            background-color: #f2f2f2;
+        }
+        li a{
+            line-height: 50px;
+            vertical-align: middle;
+            text-decoration: none;
+            font-family: Arial;
+            color: gray;
+        }
+        li a img{
+            margin-left: 20px;
+        }
+    </style>
+    <script src="lib/jquery-3.1.0.js"></script>
+    <script>
+    	$(function(){
+    		/*
+    		$("a[href $= 'batman.jpg']").append("<img src='images/batman.jpg' width='40' align='absmiddle'/>");
+    		$("a[href $= 'ironman.jpg']").append("<img src='images/ironman.jpg' width='40' align='absmiddle'/>");
+    		$("a[href $= 'phantom.jpg']").append("<img src='images/phantom.jpg' width='40' align='absmiddle'/>");
+    		$("a[href $= 'superman.jpg']").append("<img src='images/superman.jpg' width='40' align='absmiddle'/>");
+    		 */
+    		
+    		/*
+    		$("ul")
+    		.find("a[href $= 'batman.jpg']")
+    		.append("<img src='images/batman.jpg' width='40' align='absmiddle'/>")
+    		.end()
+    		.find("a[href $= 'ironman.jpg']")
+    		.append("<img src='images/ironman.jpg' width='40' align='absmiddle'/>")
+    		.end()
+    		.find("a[href $= 'phantom.jpg']")
+    		.append("<img src='images/phantom.jpg' width='40' align='absmiddle'/>")
+    		.end()
+    		.find("a[href $= 'superman.jpg']")
+    		.append("<img src='images/superman.jpg' width='40' align='absmiddle'/>");
+    		 */
+    		
+    		
+    		/*
+    		$("a").each(function(){
+    			var elm = $(this);
+    			var path = elm.attr("href");
+    			elm.append("<img src='"+path+"' width='40' align='absmiddle'/>")
+    		})
+    		 */
+    		
+    		/*
+    		var elm = $("a");
+    		for(var i = 0 ; i < elm.length; i++){
+    			var path = elm[i].getAttribute("href");
+    			elm[i].innerHTML += "<img src='"+path+"' width='40' align='absmiddle'/>";
+    		};
+    		 */
+    		
+    		var elm = $("a");
+    		for(var i = 0 ; i < elm.length; i++){
+    			var path = elm.eq(i).attr("href");
+    			elm.eq(i).append("<img src='"+path+"' width='40' align='absmiddle'/>");
+    		};
+    	})
+    </script>
+</head>
+<body>
+    <ul>
+        <li><a href="images/batman.jpg">Download Image</a></li>
+        <li><a href="images/ironman.jpg">Download Image</a></li>
+        <li><a href="images/phantom.jpg">Download Image</a></li>
+        <li><a href="images/superman.jpg">Download Image</a></li>
+        <li><a href="images/batman.jpg">Download Image</a></li>
+        <li><a href="images/superman.jpg">Download Image</a></li>
+        <li><a href="images/ironman.jpg">Download Image</a></li>
+        <li><a href="images/phantom.jpg">Download Image</a></li>
+        <li><a href="images/ironman.jpg">Download Image</a></li>
+    </ul>
+</body>
+</html>
+
+

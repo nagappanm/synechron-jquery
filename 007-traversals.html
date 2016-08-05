@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script src="lib/jquery-3.1.0.js"></script>
+	<script>
+		$(function(){
+			// alert($("p").length);
+			// alert($("p").get(0).innerHTML);
+			// alert($("p")[0].innerHTML);
+			// alert();
+			// $($("p").get(0)).css("border","2px solid red");
+			
+			// $("p").find(".x").css("border","2px solid red");
+			// $("p .x").css("border","2px solid red");
+
+			/*
+			$("p").each(function(){
+				// alert("i found a paragraph");
+				// alert(this.innerHTML);
+				// this.style.border="2px solid red";
+				// this.setAttribute("style","border: 2px solid red");
+				$(this).css("border","2px solid red");
+			});
+			 */
+			// alert($("body").children().length);
+			
+			$("p").filter(":contains(xbox)").css("border","2px solid red")
+		});
+	</script>
+</head>
+<body>
+	<p>
+		First <br/>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</p>
+	<p>
+		Second <br/>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</p>
+	<p>
+		Third <br/>
+		<span class="x">xbox</span>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</p>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script src="lib/jquery-3.1.0.js"></script>
+	<script>
+		$(function(){
+			// $(".x").css("border","2px solid red");
+			// $(".x").parent().parent().parent().css("border","2px solid red");
+			// $(".x").parents(".box").css("border","2px solid red");
+			// $(".x").parentsUntil(".box").css("border","2px solid red");
+			$(".x").closest(".box").css("border","2px solid red");
+		});
+	</script>
+</head>
+<body>
+<ul>
+	<li>List Item 1</li>
+	<li>List Item 2</li>
+	<li class="box">
+		List Item 3
+		<ol  class="box">
+			<li>Nested Orderd List 1</li>
+			<li>Nested Orderd List 2</li>
+			<li>
+				Nested Orderd List 3
+				<ul>
+					<li>Deep nested unorderd list</li>
+					<li class="x">Deep nested unorderd list</li>
+					<li>Deep nested unorderd list</li>
+					<li>Deep nested unorderd list</li>
+				</ul>
+			</li>
+			<li>Nested Orderd List 4</li>
+			<li>Nested Orderd List 5</li>
+		</ol>
+	</li>
+	<li>List Item 4</li>
+	<li>List Item 5</li>
+</ul>
+</body>
+</html>

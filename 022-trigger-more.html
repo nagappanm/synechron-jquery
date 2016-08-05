@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Events in jQuery</title>
+	<script src="lib/jquery-3.1.0.js"></script>
+	<script>
+		$(function(){
+			$("img[alt='batman']").on("sit.batman", function(evt,task){
+				$("#log").append("batman is "+task)
+			});
+			$("img[alt='batman']").on("stand.batman", function(evt,task){
+				$("#log").append("batman is "+task)
+			});
+			$("img[alt='batman']").on("run.batman", function(evt,task){
+				$("#log").append("batman is "+task)
+			});
+			//------------------------------------------------------
+			$("img[alt='supergirl']").on("click", function(evt){
+				$("img[alt='batman']").off(".batman");
+			});
+			//------------------------------------------------------
+			$("img[alt='rajani']").on("click", function(evt){
+				$("img[alt='batman']").trigger("sit.batman","sitting")
+				$("img[alt='batman']").trigger("stand.batman","standing")
+				$("img[alt='batman']").trigger("run.batman","running")
+			});
+		});
+	</script>
+</head>
+<body>
+	<img src="images/batman.jpg" 		alt="batman" 	width="100" />
+	<img src="images/rajani.jpg" 		alt="rajani" 	width="100" />
+	<img src="images/supergirl.jpg" 	alt="supergirl" 	width="100" />
+	<hr/>
+	<h1 id="log"></h1>
+</body>
+</html>

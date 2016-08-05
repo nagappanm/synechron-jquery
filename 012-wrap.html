@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Wrap Wrap-all Wrap Inner UnWrap</title>
+	<script src="lib/jquery-3.1.0.js"></script>
+	<style>
+		.boxer{
+			width: 200px;
+			background-color: silver;
+			padding: 10px;
+			margin: 5px;
+			vertical-align: middle;
+			text-align: center;
+		}
+		.box{
+			background-color: yellow;
+		}
+		ul{
+			border: 20px ridge purple;
+			padding: 10px;
+		}
+	</style>
+	<script>
+	var elm = null;
+		$(function(){
+			// $(".box").wrap("<div class='boxer'/>");
+			// $(".box").wrapAll("<div class='boxer'/>");
+			
+			// $(".box").wrap(".boxer");
+			// $(".box").wrapAll(".boxer");
+			
+			//  $(".box").wrap(".boxer").end().find(".boxer").filter(":first").hide();
+			
+			//  $(".box").wrapInner(".boxer");
+			
+			// $("ul").empty();
+			
+			//  $("ul").hide();
+			 $("ul").on("click", clickHandler);
+			 elm = $("ul").detach(); // will not remove the events
+			//  elm = $("ul").remove();
+		});
+		function putitback(){
+			$("body").append(elm);
+		}
+		function clickHandler(){
+			alert("you clicked the ul tag")
+		}
+	</script>
+</head>
+<body>
+	<div class="boxer"></div>
+	<hr/>
+	<div class="box">Box Content 1</div>
+	<div class="box">Box Content 2</div>
+	<div class="box">Box Content 3</div>
+	<div class="box">Box Content 4</div>
+	<div class="box">Box Content 5</div>
+	<hr/>
+	<button onclick="putitback()">Put it back</button>
+	<ul>
+		<li>List Item 1</li>
+		<li>List Item 2</li>
+		<li>List Item 3</li>
+		<li>List Item 4</li>
+		<li>List Item 5</li>
+	</ul>
+</body>
+</html>

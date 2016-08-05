@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script src="lib/jquery-3.1.0.js"></script>
+	<script>
+		$(function(){
+			// alert($("a").attr("href"));
+			/*
+			$("a").each(function(){
+				$(this).attr("href","images/superman.jpg")
+			})
+			 */
+			
+			/*
+			$("a").each(function(){
+				$(this).attr({
+					href : "images/superman.jpg",
+					target : "_blank"
+				}) 
+			})
+			 */
+			
+			/*
+			var  gen = "male";
+			
+			$("a").each(function(){
+				$(this).attr({
+					href : function(){
+						if( gen == "male"){
+							return "images/default.jpg"
+						}else{
+							return "images/default_f.jpg"
+						}
+						
+					},
+					target : "_blank"
+				}) 
+			})
+			 */
+			 $("a").removeAttr("href");
+		});
+	</script>
+</head>
+<body>
+	<a href="images/batman.jpg"> <img src="images/batman.jpg" 	alt="batman" 	width="100" /></a>  
+	<a href="images/batman.jpg"> <img src="images/supergirl.jpg" alt="supergirl" width="100" /></a>
+	<a href="images/batman.jpg"> <img src="images/ironman.jpg" 	alt="ironman" 	width="100" /></a>
+	<a href="images/batman.jpg"> <img src="images/supergirl.jpg" alt="supergirl" width="99" /></a>
+	<a href="images/batman.jpg"> <img src="images/phantom.jpg" 	alt="phantom" 	width="100" /></a>
+	<a href="images/batman.jpg"> <img src="images/superman.jpg" 	alt="superman" 	width="100" /></a>
+	<a href="images/batman.jpg"> <img src="images/rajani.jpg" 	alt="rajani" 	width="100" /></a>
+	<a href="images/batman.jpg"> <img src="images/robin.jpg" 	 				width="100" /></a>
+	<a href="images/batman.jpg"> <img src="images/joker.jpg" 	alt="joker" 	width="99" /></a>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+	"heroes" : [
+		{"htitle" : "Batman", "fname" :"Bruce", "lname" : "Wayne", "power" : 8, "photo" : "images/batman.jpg"},
+		{"htitle" : "Superman", "fname" :"Clark", "lname" : "Kent", "power" : 9, "photo" : "images/superman.jpg"},
+		{"htitle" : "Ironman", "fname" :"Tony", "lname" : "Stark", "power" : 7, "photo" : "images/ironman.jpg"},
+		{"htitle" : "Rajani", "fname" :"Rajani", "lname" : "Kanth", "power" : 10, "photo" : "images/rajani.jpg"},
+		{"htitle" : "Phantom", "fname" :"Kit", "lname" : "Walker", "power" : 7, "photo" : "images/phantom.jpg"}
+	]
+}

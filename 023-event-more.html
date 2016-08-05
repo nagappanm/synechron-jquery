@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Events in jQuery</title>
+	<script src="lib/jquery-3.1.0.js"></script>
+	<script>
+	// live die
+	// delegate undelegate
+	// bind unbind
+	// on off
+		$(function(){
+			/*
+			$("button").on("click", function(){
+				// $(".box").append('<img src="images/batman.jpg" onclick="clickHandler()" 		alt="batman" 	width="100" />')
+				$(".box").append('<img src="images/batman.jpg" alt="batman" 	width="100" />')
+				$(".box").on("click", clickHandler)
+			})
+			 */
+			
+			/*
+			$("img[alt='batman']").on("click", function(evt){
+				// $(evt.target).clone(true).appendTo(".box")
+			})
+			 */
+			$(".box").on("click","img[alt='batman']", clickHandler)
+		});
+		function clickHandler(evt){
+			// $("#log").append("you clicked "+evt.target.getAttribute("alt")+"<br/>")
+			$(evt.target).clone().appendTo(".box");
+		}
+	</script>
+</head>
+<body>
+	<button>Add Batman</button>
+	<hr/>
+	<div class="box">
+		<img src="images/batman.jpg" alt="batman" 	width="100" />
+	</div>
+	<h1 id="log"></h1>
+</body>
+</html>

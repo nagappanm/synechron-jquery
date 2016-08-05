@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Events in jQuery</title>
+	<script src="lib/jquery-3.1.0.js"></script>
+	<script>
+		var prodData = {
+			title : "Batman",
+			label : "Buy Me",
+			func : function(evt){
+				/*
+				var val = $(evt.target).parent().find("h1").text()
+				alert(val);prodData.func
+				 */
+				alert(this.title);
+			},
+			photo : "images/batman.jpg",
+			desc : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+		};
+		$(function(){
+			$("h1").text(prodData.title);
+			$("img").attr("src",prodData.photo);
+			$("textarea").val(prodData.desc);
+			$("button").html(prodData.label);
+			$("button").on("click", $.proxy(prodData.func, prodData));
+		})
+	</script>
+</head>
+<body>
+	<div class="box">
+		<h1></h1>
+		<img/>
+		<textarea></textarea>
+		<button data-prodtitle="Batman" title="Some Hero"></button>
+	</div>
+</body>
+</html>

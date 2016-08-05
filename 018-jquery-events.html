@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Events in jQuery</title>
+	<script src="lib/jquery-3.1.0.js"></script>
+	<script>
+		$(function(){
+			// evt.target
+			// evt.type
+			// evt.currentTarget
+			/*
+			 * 
+			$("button").click(function(evt){
+				$("h1").append("you "+evt.type+" on "+evt.target.tagName+" with content "+evt.target.innerHTML+"<br/>");
+			});
+			$("button").mouseover(function(evt){
+				$("h1").append("you "+evt.type+" on "+evt.target.tagName+" with content "+evt.target.innerHTML+"<br/>");
+			});
+			$("button").mousedown(function(evt){
+				$("h1").append("you "+evt.type+" on "+evt.target.tagName+" with content "+evt.target.innerHTML+"<br/>");
+			});
+			$("button").mouseup(function(evt){
+				$("h1").append("you "+evt.type+" on "+evt.target.tagName+" with content "+evt.target.innerHTML+"<br/>");
+			});
+			$("button").mouseout(function(evt){
+				$("h1").append("you "+evt.type+" on "+evt.target.tagName+" with content "+evt.target.innerHTML+"<br/>");
+			});
+			
+			$("button").on("click", function(evt){
+				$("h1").append("you "+evt.type+" on "+evt.target.tagName+" with content "+evt.target.innerHTML+"<br/>");
+			});
+			 */
+			$("button").on({
+				click: evtHandler,
+				mouseover: evtHandler,
+				mousedown: evtHandler,
+				mouseup: evtHandler,
+				mouseout: evtHandler
+			});
+			function evtHandler(evt){
+				$("h1").append("you "+evt.type+" on "+evt.target.tagName+" with content "+evt.target.innerHTML+"<br/>");
+			} 
+		});
+	</script>
+</head>
+<body>
+	<button>Click Me</button>
+	<hr/>
+	<h1 id="log"></h1>
+</body>
+</html>

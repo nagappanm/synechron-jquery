@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Events in jQuery</title>
+	<style>
+		.box{
+			width: 500px;
+			height: 200px;
+			background-color: gray;
+			color: white;
+			font-family: Arial;
+			text-align: justify;
+			padding: 10px;
+			margin: 10px auto;
+			overflow: auto;
+		}
+		button{
+			display: block;
+			width: 500px;
+			margin: 40px auto 0px ;
+		}
+	</style>
+	<script src="lib/jquery-3.1.0.js"></script>
+	<script>
+		$(function(){
+			$("button").on("click", function(){
+				$.getJSON("data/data.json")
+				.done(function(r,s,x){
+					$('.box').text(r.heroes[0].htitle)
+				})
+				.fail(function(x){
+					alert(x.statusText)
+				})
+			})
+		})
+	</script>
+</head>
+<body>
+	<button>Get Data</button>
+	<div class="box"></div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Events in jQuery</title>
+	<style>
+		.box{
+			width: 200px;
+			height: 100px;
+			border: 1px solid black;
+			margin: auto;
+			line-height: 100px;
+			vertical-align: middle;
+			text-align: center;
+			font-family: arial;
+		}
+		
+	</style>
+	<script src="lib/jquery-3.1.0.js"></script>
+	<script>
+		$(function(){
+			/*
+			$(".box").on("click", function(evt){
+				$(evt.target).append("you clicked me");
+				$(".box").off("click");
+			});
+			$(".box").one("click", function(evt){
+				$(evt.target).append("you clicked me");
+			});
+			 */
+			$(".box").bind("click", function(evt){
+				$(evt.target).append("you clicked me");
+				$(".box").unbind("click");
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="box"></div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Events in jQuery</title>
+	<script src="lib/jquery-3.1.0.js"></script>
+	<script>
+		$(function(){
+			/*
+			$("img:eq(0)")
+			$("img:eq(1)")
+			$("img:eq(2)")
+			 */
+			$("img[alt='batman']").on("click", function(evt){
+				$("#log").append("you clicked "+evt.target.getAttribute("alt")+"<br/>");
+				if(evt.originalEvent){
+					$("#log").append((evt.originalEvent.type+"<hr/>"))
+				}else{
+					$("#log").append(" triggered <hr/>")
+				}
+				//console.log(evt.originalEvent.type)
+			});
+			$("img[alt='ironman']").on("click", function(evt){
+				$("#log").append("you clicked "+evt.target.getAttribute("alt")+"<br/>");
+				if(evt.originalEvent){
+					$("#log").append((evt.originalEvent.type+"<hr/>"))
+				}else{
+					$("#log").append(" triggered <hr/>")
+				}	
+			});
+			$("img[alt='superman']").on("click", function(evt){
+				$("#log").append("you clicked "+evt.target.getAttribute("alt")+"<br/>");
+				if(evt.originalEvent){
+					$("#log").append((evt.originalEvent.type+"<hr/>"))
+				}else{
+					$("#log").append(" triggered <hr/>")
+				}	
+			});
+			$("img[alt='rajani']").on("click", function(evt){
+				$("img[alt='batman']").trigger("click");
+				$("img[alt='ironman']").trigger("click");
+				$("img[alt='superman']").trigger("click");
+			});
+		});
+	</script>
+</head>
+<body>
+	<img src="images/batman.jpg" 	alt="batman" 	width="100" />
+	<img src="images/ironman.jpg" 	alt="ironman" 	width="100" />
+	<img src="images/superman.jpg" 	alt="superman" 	width="100" />
+	<img src="images/rajani.jpg" 	alt="rajani" 	width="100" />
+	<hr/>
+	<h1 id="log"></h1>
+</body>
+</html>
